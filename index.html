@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- <base target="_blank" /> -->
 	<title>nanri</title>
 </head>
@@ -121,3 +122,39 @@ a {width:80%;margin:15px auto;padding:5px;border-radius:25px;}
 a span {padding-left:20px;}
 }
 </style>
+<script>
+function post(code,data){
+	// if(data){
+	// 	var param = data+='&code='+code;
+	// }else{
+	// 	var param = "code="+code;
+	// }
+	
+	var res;
+	$.ajax({
+		type:"post",
+		url:"http://nanri.cunlim.cn/api.php",
+		data:"param = 1",
+		async:false,
+		cache:false,
+		dataType:'json',
+
+		beforeSend:function(){
+			
+		},
+		success:function(r){
+			res = r;
+		},
+		complete: function () {
+			
+		},
+		error: function (err) {
+			
+		}
+
+	})
+	console.log(res);
+	return res;
+}
+post();
+</script>
